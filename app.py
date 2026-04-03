@@ -8,10 +8,12 @@ st.set_page_config(
 )
 
 PRIVACY_DISCLAIMER = (
-    "**PRIVACY DISCLAIMER**: All data you upload here are not stored by the developer, "
-    "and the code is open source on GitHub. Visit [the repository](https://github.com/LucaPaganin/imgpdf-tool) and read README.md "
-    "to review the code."
+    "**PRIVACY DISCLAIMER**: The developer does not store any data you upload. Files are processed "
+    "ephemerally in memory by Streamlit Community Cloud and are automatically deleted. The "
+    "application code is open source; visit [the repository](https://github.com/LucaPaganin/imgpdf-tool) "
+    "and read the README.md to review it."
 )
+
 
 pg = st.navigation([
     st.Page("pages/images_to_pdf.py", title="Images → PDF", icon="🖼️"),
