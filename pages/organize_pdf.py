@@ -6,7 +6,7 @@ from core.pdf_utils import doc_to_bytes
 
 
 def render():
-    st.header("Organize PDF")
+    st.header("📋 Organize PDF")
 
     if "org_key" not in st.session_state:
         st.session_state.org_key    = ""
@@ -149,3 +149,5 @@ def render():
                 "application/pdf",
                 use_container_width=True,
             )
+
+render()

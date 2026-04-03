@@ -1,19 +1,5 @@
 import streamlit as st
 
-from pages import (
-    compress_pdf,
-    images_to_pdf,
-    merge_pdfs,
-    organize_pdf,
-    page_numbers,
-    pdf_to_images,
-    protect_pdf,
-    rotate_pdf,
-    split_pdf,
-    unlock_pdf,
-    watermark,
-)
-
 st.set_page_config(
     page_title="ImgPDF Tool",
     page_icon="📄",
@@ -21,32 +7,30 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
-PAGES = {
-    "🖼️  Images → PDF": images_to_pdf,
-    "📄  PDF → Images": pdf_to_images,
-    "🔗  Merge PDFs":   merge_pdfs,
-    "✂️  Split PDF":    split_pdf,
-    "🗜️  Compress PDF": compress_pdf,
-    "🔄  Rotate PDF":   rotate_pdf,
-    "💧  Watermark":    watermark,
-    "🔢  Page Numbers": page_numbers,
-    "🔒  Protect PDF":  protect_pdf,
-    "🔓  Unlock PDF":   unlock_pdf,
-    "📋  Organize PDF": organize_pdf,
-}
-
 PRIVACY_DISCLAIMER = (
     "**PRIVACY DISCLAIMER**: All data you upload here are not stored by the developer, "
     "and the code is open source on GitHub. Visit [the repository](https://github.com/LucaPaganin/imgpdf-tool) and read README.md "
     "to review the code."
 )
 
+pg = st.navigation([
+    st.Page("pages/images_to_pdf.py", title="Images → PDF", icon="🖼️"),
+    st.Page("pages/pdf_to_images.py", title="PDF → Images", icon="📄"),
+    st.Page("pages/merge_pdfs.py",    title="Merge PDFs",   icon="🔗"),
+    st.Page("pages/split_pdf.py",     title="Split PDF",    icon="✂️"),
+    st.Page("pages/compress_pdf.py",  title="Compress PDF", icon="🗜️"),
+    st.Page("pages/rotate_pdf.py",    title="Rotate PDF",   icon="🔄"),
+    st.Page("pages/watermark.py",     title="Watermark",    icon="💧"),
+    st.Page("pages/page_numbers.py",  title="Page Numbers", icon="🔢"),
+    st.Page("pages/protect_pdf.py",   title="Protect PDF",  icon="🔒"),
+    st.Page("pages/unlock_pdf.py",    title="Unlock PDF",   icon="🔓"),
+    st.Page("pages/organize_pdf.py",  title="Organize PDF", icon="📋"),
+])
 
 with st.sidebar:
     st.markdown("## 📄 ImgPDF Tool")
     st.caption("All-in-one PDF & image toolkit")
     st.markdown(PRIVACY_DISCLAIMER)
     st.divider()
-    page = st.radio("Navigation", list(PAGES.keys()), label_visibility="collapsed")
 
-PAGES[page].render()
+pg.run()

@@ -63,3 +63,5 @@ def render():
                         cols = st.columns(min(len(previews), 3))
                         for i, (name, img) in enumerate(previews):
                             cols[i % 3].image(img, caption=name, use_container_width=True)
+
+render()

@@ -48,3 +48,5 @@ def render():
                 base = upload.name.rsplit(".", 1)[0]
                 st.success("✅ Watermark applied.")
                 dl_pdf(doc_to_bytes(doc), f"{base}_watermarked.pdf")
+
+render()

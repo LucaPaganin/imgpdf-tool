@@ -5,7 +5,7 @@ from PIL import Image
 
 
 def render():
-    st.header("Images to PDF")
+    st.header("🖼️ Images → PDF")
 
     if "img2pdf_items" not in st.session_state:
         st.session_state.img2pdf_items = []  # [{"name": str, "data": bytes}]
@@ -107,3 +107,5 @@ def render():
                 "application/pdf",
                 use_container_width=True,
             )
+
+render()

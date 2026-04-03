@@ -34,3 +34,5 @@ def render():
 
                 base = upload.name.rsplit(".", 1)[0]
                 dl_pdf(data, f"{base}_compressed.pdf")
+
+render()

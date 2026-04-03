@@ -5,7 +5,7 @@ from core.pdf_utils import doc_to_bytes
 
 
 def render():
-    st.header("Merge PDFs")
+    st.header("🔗 Merge PDFs")
 
     if "merge_items" not in st.session_state:
         st.session_state.merge_items = []   # [{"name", "data", "pages", "size"}]
@@ -99,3 +99,5 @@ def render():
                 "application/pdf",
                 use_container_width=True,
             )
+
+render()

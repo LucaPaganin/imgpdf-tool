@@ -8,7 +8,7 @@ from core.pdf_utils import doc_to_bytes
 
 
 def render():
-    st.header("Split PDF")
+    st.header("✂️ Split PDF")
 
     if "split_key" not in st.session_state:
         st.session_state.split_key   = ""
@@ -138,3 +138,5 @@ def render():
             n_files = len(ranges_0idx) if ranges_0idx else "?"
             st.success(f"Ready — {n_files} file{'s' if n_files != 1 else ''}")
             st.download_button(label, data_out, fname, mime, use_container_width=True)
+
+render()

@@ -53,3 +53,5 @@ def render():
                 base = upload.name.rsplit(".", 1)[0]
                 st.success(f"✅ Page numbers added to {total} page(s).")
                 dl_pdf(doc_to_bytes(doc), f"{base}_numbered.pdf")
+
+render()

@@ -31,3 +31,5 @@ def render():
                         "application/pdf",
                         use_container_width=True,
                     )
+
+render()

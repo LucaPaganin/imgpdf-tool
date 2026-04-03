@@ -29,3 +29,5 @@ def render():
                     base = upload.name.rsplit(".", 1)[0]
                     st.success(f"✅ Rotated {len(pages_idx)} page(s) by {angle}°.")
                     dl_pdf(doc_to_bytes(doc), f"{base}_rotated.pdf")
+
+render()
