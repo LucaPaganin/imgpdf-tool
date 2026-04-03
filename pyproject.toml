@@ -1,0 +1,14 @@
+[project]
+name = "imgpdf-tool"
+version = "0.1.0"
+description = "All-in-one PDF & image toolkit (Streamlit)"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pillow>=10.0.0",
+    "pymupdf>=1.24.0",
+    "streamlit>=1.36.0",
+]
+
+[tool.uv]
+# Run the app with: uv run streamlit run app.py
