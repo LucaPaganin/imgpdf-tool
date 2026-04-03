@@ -45,7 +45,7 @@ PRIVACY_DISCLAIMER = (
 with st.sidebar:
     st.markdown("## 📄 ImgPDF Tool")
     st.caption("All-in-one PDF & image toolkit")
-    st.markdown()
+    st.markdown(PRIVACY_DISCLAIMER)
     st.divider()
     page = st.radio("Navigation", list(PAGES.keys()), label_visibility="collapsed")
 
